@@ -1,24 +1,48 @@
-/**
- * Created by zzl81cn_pre on 2016/12/27.
- */
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
+var node_module_dir = path.resolve(__dirname, 'node_module')
+// 能在所有JS模块里面读取“__DEV__”这个值
+var definePlugin = new webpack.DefinePlugin({
+	__DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
+})
 
 module.exports = {
 	entry: [
-		'webpack/hot/only-dev-server',
-		'./js/app.js'
+		'babel-polyfill',
+		'webpack/hot/dev-server',
+		'webpack-dev-server/client?http://localhost:8080',
+		path.resolve(__dirname, 'app/main.js'),
 	],
 	output: {
-		path: __dirname + '/build',
+		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js'
 	},
-	module: [
-		{ test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-		{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-		{ test: /\.css$/, loader: "style!css" },
-		{ test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/,	query: {presets: ['es2015']}}
-	],
+	devServer: {
+		historyApiFallback: true
+	},
 	plugins: [
-		new webpack.NoErrorsPlugin()
-	]
-};
+		definePlugin,
+	],
+	module: {
+		loaders: [{
+			loader: "babel-loader", //加载babel模块
+			include: [
+				path.resolve(__dirname, 'app'),
+			],
+			exclude: [
+				node_module_dir
+			],
+			test: /\.jsx?$/,
+			query: {
+				plugins: ['transform-runtime'],
+				presets: ['es2015', 'stage-0', 'react']
+			}
+		}, {
+			test: /\.css$/,
+			include: [
+				path.resolve(__dirname, 'app'),
+			],
+			loader: 'style-loader!css-loader?modules&localIdentName=_[local]_[hash:base64:5]'
+		}]
+	}
+}
