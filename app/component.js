@@ -1,10 +1,11 @@
 //component.js
-'use strict'
+'use strict';
+
 import React from 'react'
 
 class Component extends React.Component{
 	render(){
-		return <div>Hello World!</div>
+		return <div className="first">Hello World!</div>
 	}
 }
 export default Component;
