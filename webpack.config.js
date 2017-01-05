@@ -1,8 +1,8 @@
-let path = require('path');
-let webpack = require('webpack');
-let node_module_dir = path.resolve(__dirname, 'node_module');
+var path = require('path');
+var webpack = require('webpack');
+var node_module_dir = path.resolve(__dirname, 'node_module');
 // 能在所有JS模块里面读取“__DEV__”这个值
-let definePlugin = new webpack.DefinePlugin({
+var definePlugin = new webpack.DefinePlugin({
 	__DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
 });
 
@@ -22,9 +22,12 @@ module.exports = {
 	},
 	plugins: [
 		definePlugin,
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin()
 	],
 	module: {
 		loaders: [{
+			test: /\.jsx?$/,
 			loader: "babel-loader", //加载babel模块
 			include: [
 				path.resolve(__dirname, 'app'),
@@ -32,11 +35,14 @@ module.exports = {
 			exclude: [
 				node_module_dir
 			],
-			test: /\.jsx?$/,
 			query: {
 				plugins: ['transform-runtime'],
 				presets: ['es2015', 'stage-0', 'react']
 			}
+		}, {
+			// load scss
+			test: /\.scss$/,
+			loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
 		}, {
 			test: /\.css$/,
 			include: [
