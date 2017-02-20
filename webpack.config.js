@@ -27,6 +27,7 @@ module.exports = {
 	],
 	module: {
 		loaders: [{
+			// load JSX
 			test: /\.jsx?$/,
 			loader: "babel-loader", //加载babel模块
 			include: [
@@ -44,6 +45,7 @@ module.exports = {
 			test: /\.scss$/,
 			loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
 		}, {
+			// load css
 			test: /\.css$/,
 			include: [
 				path.resolve(__dirname, 'app'),
@@ -51,4 +53,4 @@ module.exports = {
 			loader: 'style-loader!css-loader?modules&localIdentName=_[local]_[hash:base64:5]'
 		}]
 	}
-}
+};
