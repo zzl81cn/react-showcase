@@ -1,8 +1,8 @@
-var path = require('path');
-var webpack = require('webpack');
-var node_module_dir = path.resolve(__dirname, 'node_module');
+let path = require('path');
+let webpack = require('webpack');
+let node_module_dir = path.resolve(__dirname, 'node_module');
 // 能在所有JS模块里面读取“__DEV__”这个值
-var definePlugin = new webpack.DefinePlugin({
+let definePlugin = new webpack.DefinePlugin({
 	__DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
 });
 
@@ -11,7 +11,8 @@ module.exports = {
 		'babel-polyfill',
 		'webpack/hot/dev-server',
 		'webpack-dev-server/client?http://localhost:8080',
-		path.resolve(__dirname, 'app/main.js'),
+		path.resolve(__dirname, 'app/main.js')
+		// path.resolve(__dirname, 'app/hello-entry.js')
 	],
 	output: {
 		path: path.resolve(__dirname, 'build'),
