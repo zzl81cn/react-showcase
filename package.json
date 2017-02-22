@@ -2,7 +2,7 @@
   "name": "react-showcase",
   "version": "1.0.0",
   "description": "react components showcase",
-  "main": "index.js",
+  "main": "build/bundle.js",
   "scripts": {
     "build": "webpack --progress --colors",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
