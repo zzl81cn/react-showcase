@@ -1,5 +1,7 @@
 /**
  * Created by zzl81cn on 2017/2/22.
+ * See:
+ * 1.https://github.com/zzl81cn/build-a-hn-front-page
  */
 let path = require('path');
 let webpack = require('webpack');

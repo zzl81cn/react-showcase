@@ -21,6 +21,7 @@ ReactDOM.render(
 	document.getElementById('appRoot')
 );*/
 
+// ES6
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
