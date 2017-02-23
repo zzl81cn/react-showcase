@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var node_module_dir = path.resolve(__dirname, 'node_module');
+var node_module_dir = path.resolve(__dirname, 'node_modules');
 var definePlugin = new webpack.DefinePlugin({
 	__DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
 });
