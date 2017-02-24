@@ -1,7 +1,8 @@
 /**
  * Created by zzl81cn on 2017/2/22.
  * See:
- * 1.https://github.com/zzl81cn/build-a-hn-front-page
+ * 1.https://zhuanlan.zhihu.com/p/21287263
+ * 2.https://github.com/zzl81cn/build-a-hn-front-page
  */
 let path = require('path');
 let webpack = require('webpack');
@@ -15,6 +16,8 @@ module.exports = {
 	entry: {
 		// Normal method type.
 		index: './src/index.js',
+		// Use path.resolve single entry(由这个配置的入口输出的路径不对，没有文件)
+		// path: path.resolve(__dirname, './src/index.js'),
 		// For mutiple output target.
 		// another: './src/another.js'
 		// 第三方包，需要output为多文件输出
@@ -23,8 +26,6 @@ module.exports = {
 			'react-dom'
 		]
 	},
-	// Use path.resolve single entry
-	// entry: path.resolve(__dirname, './src/index.js'),
 	// For single output target.
 	/*output: {
 		path: './dist/',
@@ -44,6 +45,8 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
+				// css-loader 处理 css 文件中的 url() 表达式.
+				// style-loader 将 css 代码插入页面中的 style 标签中.
 				loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
 			},
 			{
@@ -53,6 +56,21 @@ module.exports = {
 				query: {
 					presets: ['es2015', 'stage-0', 'react']
 				}
+			},
+			{
+				test: /\.jsx?$/,
+				include: [path.resolve(__dirname, './src')],
+				exclude: '/node_modules/',
+				loader: 'babel-loader',
+				query: {
+					plugins: ['transform-runtime'],
+					presets: ['es2015', 'stage-0', 'react']
+				}
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				// 这里的 limit=8192 表示用 base64 编码 <= ８K 的图像
+				loader: 'url-loader?limit=16384'
 			}
 		]
 	},

@@ -14,7 +14,7 @@ export default Component;*/
 import React from 'react';
 require('./App.scss');
 
-let Login = React.createClass({
+const Login = React.createClass({
 	getInitialState: function () {
 		return {
 			clicked: false

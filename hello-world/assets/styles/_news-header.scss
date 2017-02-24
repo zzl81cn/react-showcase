@@ -1,0 +1,29 @@
+.news-header {
+	//@include clearfix;
+	display: flex;
+	flex-direction: row;
+	//justify-content: space-around;
+	align-items: center;
+	background-color: #fff;
+	box-shadow: 0 3px 6px rgba(128, 128, 128, .4);
+	.brand-logo {
+		a {
+			//float: left;
+			display: inline-block;
+			padding: 7px 10px;
+		}
+	}
+	.news-header-title {
+		margin-left: 10px;
+	}
+	.news-header-nav {
+		margin-right: 10px;
+		.news-header-link {
+			float: left;
+			padding: 0 5px;
+		}
+	}
+	.news-login {
+		float: right;
+	}
+}
