@@ -75,8 +75,16 @@ module.exports = {
 		]
 	},
 	plugins: [
+		// For webpack 1.x
 		// new webpack.optimize.CommonsChunkPlugin(/*chunck name=*/'vendor',/*chunck filename*/'vendor.bundle.js')
-		new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'})
+		// For webpack 2.x
+		new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'}),
+		// 注意: 默认情况下，React 将会在开发模式，很缓慢，不建议用于生产。要在生产模式下使用 React，设置环境变量 NODE_ENV 为 production （使用 envify 或者 webpack's DefinePlugin）。例如：
+		new webpack.DefinePlugin({
+			"process.env": {
+				NODE_ENV: JSON.stringify("production")
+			}
+		})
 	],
 	resolve:{
 		extensions:['.js','.json']

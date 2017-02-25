@@ -4,14 +4,14 @@
 * */
 
 /*
-* In this case, the color picker will initialize with the color #2ad6d6 or special color. When the color is changed, handleChangeComplete will fire and set the new color to state.
+* Pass a function to call every time the color is changed. Use this to store the color in the state of a parent component or to make other transformations.
+
+ Keep in mind this is called on drag events that can happen quite frequently. If you just need to get the color once use onChangeComplete.
  * */
 import React, {Component} from 'react';
 import ReactColor, {SwatchesPicker} from 'react-color';
 
 export default class RCSwatchTest extends Component {
-
-
 	handleChange (color, event) {
 		color = {
 		  hex: '#333',

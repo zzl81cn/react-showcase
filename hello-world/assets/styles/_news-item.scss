@@ -1,0 +1,28 @@
+.news-list {
+	background: #f6f6ef;
+	margin-left: auto;
+	margin-right: auto;
+	//width: 85%;
+}
+.news-item {
+	color: #828282;
+	margin-top: 5px;
+	align-items: baseline;
+	display: flex;
+	.news-item-titletext {
+		flex-grow: 1;
+		.news-item-domain {
+			font-size: 8pt;
+			margin-left: 5px;
+			& > a {
+				color: #828282;
+				text-decoration: none;
+			}
+		}
+		.news-item-link {
+			color: black;
+			font-size: 10pt;
+			text-decoration: none;
+		}
+	}
+}
