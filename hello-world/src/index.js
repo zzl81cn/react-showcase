@@ -56,6 +56,7 @@ import ModalDemo from './Components/modal.jsx';
 	}
 }*/
 
+
 // ReactDOM.render(<Hello name="World"/>, document.getElementById('appRoot'));
 // ReactDOM.render(<Hello name="World"/>, $('#appRoot')[0]);
 // ReactDOM.render(<NewsList/>, $('#appRoot')[0]);
