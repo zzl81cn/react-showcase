@@ -41,13 +41,83 @@ module.exports = {
 		publicPath: '/dist'
 	},
 	module: {
-		loaders:[
+		/*loaders:[
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
 				// css-loader 处理 css 文件中的 url() 表达式.
 				// style-loader 将 css 代码插入页面中的 style 标签中.
-				loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
+				loader: ['style-loader', 'css-loader', 'autoprefixer-loader?browsers=last 2 versions', 'sass-loader']
+			},
+			{
+				test: /\.js$/,
+				exclude: '/node_modules/',
+				loader: 'babel-loader',
+				query: {
+					presets: ['es2015', 'stage-0', 'react']
+				}
+			},
+			{
+				test: /\.jsx?$/,
+				include: [path.resolve(__dirname, './src')],
+				exclude: '/node_modules/',
+				loader: 'babel-loader',
+				query: {
+					plugins: ['transform-runtime'],
+					presets: ['es2015', 'stage-0', 'react']
+				}
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				// 这里的 limit=8192 表示用 base64 编码 <= ８K 的图像
+				loader: 'url-loader?limit=16384'
+			}
+		]*/
+		rules:[
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				// css-loader 处理 css 文件中的 url() 表达式.
+				// style-loader 将 css 代码插入页面中的 style 标签中.
+				use: [
+					{
+						loader: 'style-loader',
+						options: {
+							sourceMap: true
+						}
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: true,
+							localIdentName: '[name]_[local]_[hash:base64:5]'
+						}
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							plugins: function () {
+								return [
+									require('precss'),
+									require('autoprefixer')
+								];
+							}
+						}
+					},
+					/*{
+						loader: 'autoprefixer-loader',
+						options: {
+							browsers: 'last 2 versions'
+						}
+					},*/
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						}
+					},
+				]
 			},
 			{
 				test: /\.js$/,
@@ -87,7 +157,7 @@ module.exports = {
 		})
 	],
 	resolve:{
-		extensions:['.js','.json']
+		extensions:['.js', 'jsx', '.json']
 	}
 	/*devServer: {
 		hot: true,
