@@ -12,6 +12,7 @@ import RCSwatchTest from '../Components/react-color-swatch-onchange.jsx';
 import NewsHeader from './news-header.jsx';
 import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/this-child.jsx';
+import MyForm from '../Components/form.js';
 
 export default class NewsList extends Component {
 	render(){
@@ -39,12 +40,15 @@ export default class NewsList extends Component {
 			// Mutiple item
 			<div className="news-list">
 				<NewsHeader/>
+
+				<MyForm/>
 				{/*EX: this.props.children */}
 				<NoteList>
 					<span>Ah ha!</span>
 					<span>Hello</span>
 					<span>World!</span>
 				</NoteList>
+
 				<div className="news-list-item">
 					{
 						(this.props.items).map(function (item, index) {

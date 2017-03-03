@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Created by zzl81cn on 2017/2/22.
  *
@@ -57,8 +58,27 @@ import ModalDemo from './Components/modal.jsx';
 	}
 }*/
 
+// Test props PropTypes&defaultProps
+/*const data = 'xyz',
+	data1 = 456;
+const propTypes = {
+	name: React.PropTypes.string,
+}
+const defaultProps = {
+	name: '789',
+}
+class Hello extends Component{
+	render(){
+		return (
+			<div>Hello, {this.props.name}!</div>
+		)
+	}
+}
+Hello.propTypes =  propTypes;
+Hello.defaultProps = defaultProps;*/
 
-// ReactDOM.render(<Hello name="World"/>, document.getElementById('appRoot'));
+// ReactDOM.render(<Hello name={data}/>, document.getElementById('appRoot'));
+// ReactDOM.render(<Hello />, document.getElementById('appRoot'));
 // ReactDOM.render(<Hello name="World"/>, $('#appRoot')[0]);
 // ReactDOM.render(<NewsList/>, $('#appRoot')[0]);
 //ReactDOM.render(<ModalDemo/>, $('#appRoot')[0]);
