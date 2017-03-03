@@ -14,6 +14,7 @@ import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/this-child.jsx';
 import MyForm from '../react-api/form.js';
 import LifeCycle from '../react-api/lifecycle.js';
+import UserGist from '../react-api/ajax.js'
 
 export default class NewsList extends Component {
 	render(){
@@ -42,6 +43,8 @@ export default class NewsList extends Component {
 			<div className="news-list">
 				<NewsHeader/>
 
+				{/*未完成*/}
+				<UserGist source="https://api.github.com/users/octocat/gists" />
 				<LifeCycle/>
 				<MyForm/>
 				{/*EX: this.props.children */}
