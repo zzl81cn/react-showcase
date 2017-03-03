@@ -12,7 +12,8 @@ import RCSwatchTest from '../Components/react-color-swatch-onchange.jsx';
 import NewsHeader from './news-header.jsx';
 import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/this-child.jsx';
-import MyForm from '../Components/form.js';
+import MyForm from '../react-api/form.js';
+import LifeCycle from '../react-api/lifecycle.js';
 
 export default class NewsList extends Component {
 	render(){
@@ -41,6 +42,7 @@ export default class NewsList extends Component {
 			<div className="news-list">
 				<NewsHeader/>
 
+				<LifeCycle/>
 				<MyForm/>
 				{/*EX: this.props.children */}
 				<NoteList>

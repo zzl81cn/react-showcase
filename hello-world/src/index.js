@@ -85,21 +85,23 @@ Hello.defaultProps = defaultProps;*/
 // ReactDOM.render(<RCSketch/>, document.getElementById('appRoot'));
 
 // Define
-function get(url) {
+function getData(url) {
+	// Use ES6 Generator's genesis Promise
 	return Promise.resolve($.ajax(url));
 }
 // Call
-get('https://hacker-news.firebaseio.com/v0/topstories.json')
+getData('https://hacker-news.firebaseio.com/v0/topstories.json')
 	.then(function (stories) {
 		// console.log('Data is: ', stories.slice(0, 2));
-		/*
-		 * [13729979,13729517]
-		 * */
-		return Promise.all(stories.slice(0, 10).map(itemId => get('https://hacker-news.firebaseio.com/v0/item/' + itemId + '.json')));
+		// [13729979,13729517]
+
+		return Promise.all(
+			stories.slice(0, 10).map(itemId => getData('https://hacker-news.firebaseio.com/v0/item/' + itemId + '.json'))
+		);
 		// {"by":"blondie9x","descendants":22,"id":13729979,"kids":[13730353,13730307,13730309,13730289,13730224,13730400,13730185,13730123],"score":75,"time":1487995398,"title":"Amazon Deforestation, Once Tamed, Comes Roaring Back","type":"story","url":"https://www.nytimes.com/2017/02/24/business/energy-environment/deforestation-brazil-bolivia-south-america.html"}
 	}).then(function (items) {
-	ReactDOM.render(<NewsList items={items}/>, $('#appRoot')[0]);
-}).catch(function (e) {
-	console.log('Oh Err', e);
-});
+		ReactDOM.render(<NewsList items={items}/>, $('#appRoot')[0]);
+	}).catch(function (e) {
+		console.log('Oh Err', e);
+	});
 
