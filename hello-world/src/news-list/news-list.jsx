@@ -39,7 +39,9 @@ export default class NewsList extends Component {
 			// Mutiple item
 			<div className="news-list">
 				<NewsHeader/>
+				{/*EX: this.props.children */}
 				<NoteList>
+					<span>Ah ha!</span>
 					<span>Hello</span>
 					<span>World!</span>
 				</NoteList>

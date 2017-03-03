@@ -41,7 +41,7 @@ module.exports = {
 		publicPath: '/dist'
 	},
 	module: {
-		/*loaders:[
+		loaders:[
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
@@ -72,8 +72,8 @@ module.exports = {
 				// 这里的 limit=8192 表示用 base64 编码 <= ８K 的图像
 				loader: 'url-loader?limit=16384'
 			}
-		]*/
-		rules:[
+		]
+		/*rules:[
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
@@ -105,12 +105,12 @@ module.exports = {
 							}
 						}
 					},
-					/*{
+					/!*{
 						loader: 'autoprefixer-loader',
 						options: {
 							browsers: 'last 2 versions'
 						}
-					},*/
+					},*!/
 					{
 						loader: 'sass-loader',
 						options: {
@@ -142,7 +142,7 @@ module.exports = {
 				// 这里的 limit=8192 表示用 base64 编码 <= ８K 的图像
 				loader: 'url-loader?limit=16384'
 			}
-		]
+		]*/
 	},
 	plugins: [
 		// For webpack 1.x
