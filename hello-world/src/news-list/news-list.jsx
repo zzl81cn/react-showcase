@@ -42,8 +42,7 @@ export default class NewsList extends Component {
 			// Mutiple item
 			<div className="news-list">
 				<NewsHeader/>
-
-				{/*未完成*/}
+				{/*AJAX*/}
 				<UserGist source="https://api.github.com/users/octocat/gists" />
 				<LifeCycle/>
 				<MyForm/>

@@ -2,7 +2,7 @@
  * Created by zzl81cn on 2017/3/3.
  */
 import React from 'react';
-import $ from 'jquery';
+const $ = window.$ = require('jquery');
 
 export default class UserList extends React.Component {
 	constructor(props) {
