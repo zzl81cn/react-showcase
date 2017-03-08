@@ -49,7 +49,7 @@ import NewsList from './news-list/news-list.jsx';
 // Modal example
 import ModalDemo from './Components/modal.jsx';
 
-// HelloWorld Components
+// Normal HelloWorld Components
 /*class Hello extends Component{
 	render(){
 		return (
