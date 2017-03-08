@@ -11,7 +11,7 @@ import RCSwatchTest from '../Components/react-color-swatch-onchange.jsx';
 
 import NewsHeader from './news-header.jsx';
 import NewsItem from './news-item.jsx';
-import NoteList from '../react-api/this-child.jsx';
+import NoteList from '../react-api/notelist-this-child';
 import MyForm from '../react-api/form.js';
 import LifeCycle from '../react-api/lifecycle.js';
 import UserGist from '../react-api/ajax.js'
