@@ -58,6 +58,21 @@ export default class RCSketchTest extends Component {
 					backgroundColor: this.props.primaryColor,
 					transition: '100ms linear background-color'
 				},
+				color: {
+					width: '36px',
+					height: '12px',
+					backgroundColor: this.props.primaryColor,
+					borderRadius: '2px'
+				},
+				watch: {
+					display: 'inline-block',
+					marginLeft: '5px',
+					padding: '2px',
+					backgroundColor: '#fff',
+					borderRadius: '1px',
+					boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+					cursor: 'pointer'
+				},
 				popover: {
 					position: 'absolute',
 					zIndex: '2'
@@ -76,6 +91,9 @@ export default class RCSketchTest extends Component {
 			<div className="container">
 				<h3 style={styles.title}>SketchPicker</h3>
 				<button onClick={ this.handleClick}>Picker Color</button>
+				<div style={styles.watch} onClick={this.handleClick}>
+					<div style={styles.color}></div>
+				</div>
 				{/*Or color={this.state.background}*/}
 				{
 					this.state.displayColorPicker?<div style={styles.popover}>
