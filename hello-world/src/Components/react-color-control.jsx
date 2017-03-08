@@ -97,9 +97,9 @@ export default class RCSketchTest extends Component {
 				{/*Or color={this.state.background}*/}
 				{
 					this.state.displayColorPicker?<div style={styles.popover}>
-							<div style={styles.cover} onClick={this.handleClose}/>
-							<PhotoshopPicker color={ this.props.primaryColor } onChangeComplete={ this.handleChangeComplete } />
-						</div>: null
+						<div style={styles.cover} onClick={this.handleClose}/>
+						<PhotoshopPicker color={ this.props.primaryColor } onChangeComplete={ this.handleChangeComplete } />
+					</div>: null
 				}
 			</div>
 		);
