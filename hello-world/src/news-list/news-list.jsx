@@ -17,6 +17,22 @@ import LifeCycle from '../react-api/lifecycle.js';
 import UserGist from '../react-api/ajax.js'
 
 export default class NewsList extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			primaryColor: '#2ad6d6',
+			secondColor: {
+				h: 180,
+				s: 0.68,
+				l: 0.50,
+				a: 1,
+			}
+		};
+		this.handleChange = this.handleChange.bind(this)
+	}
+	handleChange(primaryColor) {
+		this.setState({primaryColor})
+	}
 	render(){
 		// 对于父子组件间的通信, 可以使用属性传递. 子组件可以使用 this.props 访问到父组件传入的属性数据.
 		let testData = {
@@ -42,6 +58,9 @@ export default class NewsList extends Component {
 			// Mutiple item
 			<div className="news-list">
 				<NewsHeader/>
+				{/*ReactColor*/}
+				<RCSketchTest primaryColor={ this.state.primaryColor } onChange={ this.handleChange }/>
+
 				{/*AJAX*/}
 				<UserGist source="https://api.github.com/users/octocat/gists" />
 				<LifeCycle/>
@@ -62,9 +81,6 @@ export default class NewsList extends Component {
 						})
 					}
 				</div>
-				<RCSketch/>
-				<RCSketchTest/>
-				<RCSwatchTest/>
 			</div>
 		)
 	}
