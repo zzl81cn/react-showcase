@@ -20,8 +20,11 @@ export default class RCSketchTest extends Component {
 				s: 0.68,
 				l: 0.50,
 				a: 1,
-			}
+			},
+			displayColorPicker: false
 		};
+		this.handleClick = this.handleClick.bind(this);
+		this.handleClose = this.handleClose.bind(this);
 		this.handleChangeComplete = this.handleChangeComplete.bind(this);
 	}
 
@@ -30,6 +33,14 @@ export default class RCSketchTest extends Component {
 		this.setState({ background: color});
 		// console.log(this.state.background)
 	};*/
+	// Toggle display state
+	handleClick= () => {
+		this.setState({displayColorPicker: !this.state.displayColorPicker})
+	};
+	//
+	handleClose = () => {
+		this.setState({displayColorPicker: false})
+	};
 	// 改变颜色后标题背景色同步改变
 	handleChangeComplete = (data) => {
 		if(data.hsl !== this.state.background) {
@@ -46,6 +57,17 @@ export default class RCSketchTest extends Component {
 				title: {
 					backgroundColor: this.props.primaryColor,
 					transition: '100ms linear background-color'
+				},
+				popover: {
+					position: 'absolute',
+					zIndex: '2'
+				},
+				cover: {
+					position: 'fixed',
+					top: '0px',
+					right: '0px',
+					bottom: '0px',
+					left: '0px'
 				}
 			}
 		})
@@ -53,8 +75,14 @@ export default class RCSketchTest extends Component {
 		return (
 			<div className="container">
 				<h3 style={styles.title}>SketchPicker</h3>
+				<button onClick={ this.handleClick}>Picker Color</button>
 				{/*Or color={this.state.background}*/}
-				<PhotoshopPicker color={ this.props.primaryColor } onChangeComplete={ this.handleChangeComplete } />
+				{
+					this.state.displayColorPicker?<div style={styles.popover}>
+							<div style={styles.cover} onClick={this.handleClose}/>
+							<PhotoshopPicker color={ this.props.primaryColor } onChangeComplete={ this.handleChangeComplete } />
+						</div>: null
+				}
 			</div>
 		);
 	}
