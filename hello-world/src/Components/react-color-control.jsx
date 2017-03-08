@@ -15,12 +15,12 @@ export default class RCSketchTest extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			background: {
+			/*background: {
 				h: 180,
 				s: 0.68,
 				l: 0.50,
 				a: 1,
-			},
+			},*/
 			displayColorPicker: false
 		};
 		this.handleClick = this.handleClick.bind(this);
