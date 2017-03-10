@@ -10,7 +10,7 @@ import RCSketchTest from '../Components/react-color-control.jsx';
 import RCSwatchTest from '../Components/react-color-swatch-onchange.jsx';
 
 import NewsHeader from './news-header.jsx';
-// import NewsItem from './news-item.jsx';
+import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/notelist-this-child';
 import MyForm from '../react-api/form.js';
 import LifeCycle from '../react-api/lifecycle.js';
@@ -87,8 +87,7 @@ export default class NewsList extends Component {
 					<span>World!</span>
 				</NoteList>
 
-				// 需要补充提交newsItem组间所需图片
-				{/*<div className="news-list-item">
+				<div className="news-list-item">
 					{
 						(this.props.items).map(function (item, index) {
 							return (
@@ -96,7 +95,7 @@ export default class NewsList extends Component {
 							)
 						})
 					}
-				</div>*/}
+				</div>
 			</div>
 		)
 	}
