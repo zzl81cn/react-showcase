@@ -43,6 +43,7 @@ import '../assets/styles/style.scss';
 import $ from 'jquery';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+
 import {createStore} from 'redux';
 const store = createStore(fn);
 const state = store.getState();
