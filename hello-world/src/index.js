@@ -44,9 +44,9 @@ import $ from 'jquery';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import {createStore} from 'redux';
+/*import {createStore} from 'redux';
 const store = createStore(fn);
-const state = store.getState();
+const state = store.getState();*/
 
 // My tutorials NewsLists
 import NewsList from './news-list/news-list.jsx';
