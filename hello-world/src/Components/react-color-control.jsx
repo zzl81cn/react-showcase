@@ -1,11 +1,11 @@
 /*
-* Author: zzl81cn
-* Date: 20170224
-* */
+ * Author: zzl81cn
+ * Date: 20170224
+ * */
 
 /*
-* In this case, the color picker will initialize with the color #2ad6d6 or special color. When the color is changed, handleChangeComplete will fire and set the new color to state.
-* 标题的背景色与颜色拾取关联起来，选择颜色关联标题背景色会变更。
+ * In this case, the color picker will initialize with the color #2ad6d6 or special color. When the color is changed, handleChangeComplete will fire and set the new color to state.
+ * 标题的背景色与颜色拾取关联起来，选择颜色关联标题背景色会变更。
  * */
 import React, {Component} from 'react';
 import ReactCSS from 'reactcss'
@@ -16,11 +16,11 @@ export default class RCSketchTest extends Component {
 		super(props);
 		this.state = {
 			/*background: {
-				h: 180,
-				s: 0.68,
-				l: 0.50,
-				a: 1,
-			},*/
+			 h: 180,
+			 s: 0.68,
+			 l: 0.50,
+			 a: 1,
+			 },*/
 			displayColorPicker: false
 		};
 		this.handleClick = this.handleClick.bind(this);
@@ -30,11 +30,11 @@ export default class RCSketchTest extends Component {
 
 	// 拾取颜色改变结果的操作
 	/*handleChangeComplete = (color) => {
-		this.setState({ background: color});
-		// console.log(this.state.background)
-	};*/
+	 this.setState({ background: color});
+	 // console.log(this.state.background)
+	 };*/
 	// Toggle display state
-	handleClick= () => {
+	handleClick = () => {
 		this.setState({displayColorPicker: !this.state.displayColorPicker})
 	};
 	//
@@ -43,8 +43,8 @@ export default class RCSketchTest extends Component {
 	};
 	// 改变颜色后标题背景色同步改变
 	handleChangeComplete = (data) => {
-		if(data.hsl !== this.state.background) {
-			this.setState({ background: data.hsl});
+		if (data.hsl !== this.state.background) {
+			this.setState({background: data.hsl});
 		}
 		this.props.onChange && this.props.onChange(data.hex);
 		console.log('Current pick color is: ', data.hex);
@@ -53,7 +53,7 @@ export default class RCSketchTest extends Component {
 
 	render() {
 		const styles = ReactCSS({
-			'default':  {
+			'default': {
 				title: {
 					backgroundColor: this.props.primaryColor,
 					transition: '100ms linear background-color'
@@ -85,7 +85,7 @@ export default class RCSketchTest extends Component {
 					left: '0px'
 				}
 			}
-		})
+		});
 
 		return (
 			<div className="container">
@@ -96,10 +96,11 @@ export default class RCSketchTest extends Component {
 				</div>
 				{/*Or color={this.state.background}*/}
 				{
-					this.state.displayColorPicker?<div style={styles.popover}>
+					this.state.displayColorPicker ? <div style={styles.popover}>
 						<div style={styles.cover} onClick={this.handleClose}/>
-						<PhotoshopPicker color={ this.props.primaryColor } onChangeComplete={ this.handleChangeComplete } />
-					</div>: null
+						<PhotoshopPicker color={ this.props.primaryColor }
+						                 onChangeComplete={ this.handleChangeComplete }/>
+					</div> : null
 				}
 			</div>
 		);
