@@ -1,17 +1,17 @@
 /**
  * Created by zzl81cn on 2017/6/7.
  */
-// document.write('Hello webpack!');
-import $ from 'jquery';
+
 import React from 'react';
 import { render } from 'react-dom';
+import NewsList from './NewsList.js';
 
 class HelloWorld extends React.Component {
 	render() {
 		return (
-			<div>Hello World!</div>
+			<h1>HelloWorld</h1>
 		);
 	}
 }
 
-render(<HelloWorld/>, $('#content')[0]);
+render(<NewsList/>, document.getElementById('content'));
