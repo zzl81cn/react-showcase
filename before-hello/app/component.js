@@ -1,20 +1,10 @@
 //component.js
 'use strict';
 
-/*
-import React from 'react'
-
-class Component extends React.Component{
-	render(){
-		return <div className="first">Hello World!</div>
-	}
-}
-export default Component;*/
-
 import React from 'react';
 require('./App.scss');
 
-const Login = React.createClass({
+let Login = React.createClass({
 	getInitialState: function () {
 		return {
 			clicked: false

@@ -20,10 +20,10 @@ module.exports = {
 		path.resolve(__dirname, 'app/main.js')
 		// path.resolve(__dirname, 'hello/hello-entry.js')
 	],
-	/*output: {
-		path: path.resolve(__dirname, './build'),
+	output: {
+		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js'
-	},*/
+	},
 	// output: [path.resolve(__dirname, 'build/bundle.js')],
 	devServer: {
 		historyApiFallback: true
@@ -37,7 +37,8 @@ module.exports = {
 		loaders: [{
 			// load JSX
 			test: /\.jsx?$/,
-			loader: "babel-loader", //加载babel模块
+			// 加载babel模块
+			loader: "babel-loader",
 			include: [
 				path.resolve(__dirname, 'app'),
 			],
