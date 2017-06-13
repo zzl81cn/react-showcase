@@ -41,9 +41,11 @@ import '../assets/styles/style.scss';
 
 // ES6 & jquery
 import $ from 'jquery';
+import 'babel-polyfill';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+// redux
 /*import {createStore} from 'redux';
 const store = createStore(fn);
 const state = store.getState();*/
@@ -51,7 +53,7 @@ const state = store.getState();*/
 // My tutorials NewsLists
 import NewsList from './news-list/news-list.jsx';
 // Modal example
-import ModalDemo from './Components/modal.jsx';
+// import ModalDemo from './Components/modal.jsx';
 
 // Normal HelloWorld Components
 /*class Hello extends Component{

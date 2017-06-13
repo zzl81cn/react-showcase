@@ -47,14 +47,14 @@ export default class MyForm extends Component {
 			</div>
 		)*/
 		return(
-		<form onSubmit={this.handleSubmit}>
-			{/*// <h1>Is this {this.state.value}</h1>*/}
-			<label>
-				Name:<input type="text" value={this.state.value} onChange={this.handleChange}/>
-			</label>
-			<input type="submit" value="Submit"/>
+			<form onSubmit={this.handleSubmit}>
+				{/*// <h1>Is this {this.state.value}</h1>*/}
+				<label>
+					Name:<input type="text" value={this.state.value} onChange={this.handleChange}/>
+				</label>
+				<input type="submit" value="Submit"/>
 
-		</form>
+			</form>
 		)
 	}
 }

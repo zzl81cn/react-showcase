@@ -54,7 +54,8 @@ module.exports = {
 				exclude: '/node_modules/',
 				loader: 'babel-loader',
 				query: {
-					presets: ['es2015', 'stage-0', 'react']
+					// presets: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
+					presets: ['babel-preset-es2015', 'babel-preset-react']
 				}
 			},
 			{
@@ -63,8 +64,8 @@ module.exports = {
 				exclude: '/node_modules/',
 				loader: 'babel-loader',
 				query: {
-					plugins: ['transform-runtime'],
-					presets: ['es2015', 'stage-0', 'react']
+					// plugins: ['transform-runtime'],
+					presets: ['babel-preset-es2015', 'babel-preset-react']
 				}
 			},
 			{
@@ -166,4 +167,4 @@ module.exports = {
 		port: 3000
 	}*/
 
-}
+};

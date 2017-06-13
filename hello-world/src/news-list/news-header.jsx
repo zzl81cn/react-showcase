@@ -4,7 +4,7 @@
 // import React, {Component} from 'react';
 import React from 'react';
 
-import navLogo from '../../assets/images/logo.png';
+import navLogo from '../../assets/images/logo-visual.jpg';
 import '../../assets/styles/news-list.scss';
 
 // export default class NewsHeader extends Component {
@@ -12,7 +12,7 @@ export default class NewsHeader extends React.Component {
 	getLogo() {
 		return (
 			<span className="brand-logo">
-				<a href="www.galaxybigdata.com"><img width="126" src={navLogo} alt="数据星河"/></a>
+				<a href="http://www.github.com/zzl81cn"><img width="33" src={navLogo} alt="visual"/></a>
 			</span>
 		)
 	}

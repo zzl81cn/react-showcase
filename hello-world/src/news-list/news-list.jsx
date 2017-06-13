@@ -5,14 +5,14 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 // ReactColor sketchPicker
-import RCSketch from '../Components/react-color.jsx';
-import RCSketchTest from '../Components/react-color-control.jsx';
-import RCSwatchTest from '../Components/react-color-swatch-onchange.jsx';
+// import RCSketch from '../Components/react-color.jsx';
+// import RCSketchTest from '../Components/react-color-control.jsx';
+// import RCSwatchTest from '../Components/react-color-swatch-onchange.jsx';
 
 import NewsHeader from './news-header.jsx';
 import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/notelist-this-child';
-import MyForm from '../react-api/form.js';
+// import MyForm from '../react-api/form.js';
 import LifeCycle from '../react-api/lifecycle.js';
 import UserGist from '../react-api/ajax.js'
 
@@ -71,15 +71,16 @@ export default class NewsList extends Component {
 				<RCSwatchTest/>
 			</div>*/
 			// Mutiple item
+			// 添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。
 			<div className="news-list">
 				<NewsHeader/>
 				{/*ReactColor*/}
-				<RCSketchTest primaryColor={ this.state.primaryColor } onChange={ this.handleChange }/>
+				{/*<RCSketchTest primaryColor={ this.state.primaryColor } onChange={ this.handleChange }/>*/}
 
 				{/*AJAX*/}
 				<UserGist source="https://api.github.com/users/octocat/gists" />
 				<LifeCycle/>
-				<MyForm/>
+				{/*<MyForm/>*/}
 				{/*EX: this.props.children */}
 				<NoteList>
 					<span>Ah ha!</span>
