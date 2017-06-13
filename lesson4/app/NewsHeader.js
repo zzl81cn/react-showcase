@@ -1,6 +1,6 @@
-import React from 'react';
-import imageLogo from '../assets/images/y18.gif';
-import '../assets/css/NewsHeader.css';
+import React from 'react'
+import imageLogo from '../assets/images/y18.gif'
+import '../assets/css/NewsHeader.css'
 
 export default class NewsHeader extends React.Component{
 	getLogo() {
