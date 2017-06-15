@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom';
 import NewsHeader from './news-header.jsx';
 import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/notelist-this-child';
-// import MyForm from '../react-api/form.js';
+import MyForm from '../react-api/form.js';
 import LifeCycle from '../react-api/lifecycle.js';
 import UserGist from '../react-api/ajax.js'
 
@@ -80,7 +80,7 @@ export default class NewsList extends Component {
 				{/*AJAX*/}
 				<UserGist source="https://api.github.com/users/octocat/gists" />
 				<LifeCycle/>
-				{/*<MyForm/>*/}
+				<MyForm/>
 				{/*EX: this.props.children */}
 				<NoteList>
 					<span>Ah ha!</span>
