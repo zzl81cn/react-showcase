@@ -31,9 +31,9 @@ export default class UserList extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div style={{padding: 10 + 'px'}}>
 				{this.state.username}'s last gist is
-				<a href={this.state.lastGistUrl}>here</a>.
+				<a href={this.state.lastGistUrl}>here</a><span style={{color: '#999'}}>(Ajax with ComponentDidMount)</span>.
 			</div>
 		);
 	}

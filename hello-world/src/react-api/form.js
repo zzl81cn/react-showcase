@@ -48,7 +48,7 @@ export default class MyForm extends Component {
 		)*/
 		return(
 			<form onSubmit={this.handleSubmit}>
-				<h1>Is this {this.state.value}</h1>
+				<h3>Is this value {this.state.value}</h3>
 				<label>
 					Name:<input type="text" value={this.state.value} onChange={this.handleChange}/>
 				</label>
