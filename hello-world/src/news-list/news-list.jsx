@@ -14,6 +14,7 @@ import NewsItem from './news-item.jsx';
 import NoteList from '../react-api/notelist-this-child';
 import MyForm from '../react-api/form.js';
 import LifeCycle from '../react-api/lifecycle.js';
+import LifeCycleES6 from '../react-api/lifeCycleES6'
 import UserGist from '../react-api/ajax.js'
 
 export default class NewsList extends Component {
@@ -79,7 +80,8 @@ export default class NewsList extends Component {
 
 				{/*AJAX*/}
 				<UserGist source="https://api.github.com/users/octocat/gists" />
-				<LifeCycle/>
+				{/*<LifeCycle/>*/}
+				<LifeCycleES6/>
 				<MyForm/>
 				{/*EX: this.props.children */}
 				<NoteList>
