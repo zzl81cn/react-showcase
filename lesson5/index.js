@@ -87,3 +87,28 @@ class App extends React.Component {
 		)
 	}
 }
+
+/**
+ * 5 连接React组件和Redux
+ * mapStateToProps的作用是声明，当state树变化的时候，哪些属性是我们关心的？
+ * 由于我们这个应用太小，只有一个属性，所以只有text这个字段。
+ * */
+function mapStateToProps(state) {
+	return {
+		text: state.text
+	}
+}
+// mapDispatchToProps的作用是把store中的dispatch方法注入给组件
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators({changeText: changeText, buttonClick: buttonClick}, dispatch)
+	}
+}
+// 这里实际上给了App两个props：text和actions，即第4步中的那段注释
+App = connect(mapStateToProps, mapDispatchToProps)(App);
+
+// 6 Render us App
+
+render(
+	<Provider store={store}><App/></Provider>, document.getElementById('root')
+);
