@@ -1,20 +1,29 @@
 /**
  * Created by zzl81cn on 2017/6/16.
+ * https://segmentfault.com/a/1190000004355491
  */
+
+/**
+ * 0 引入依赖包
+ * 我们需要react的本体、react-dom的render方法、redux的createStore和bindActionCreators方法，以及react-redux的Provider和connect方法
+ * */
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore,bindActionCreators } from 'redux'
-import { Provider,connect } from 'react-redux'
+import { createStore, bindActionCreators } from 'redux'
+import { Provider, connect } from 'react-redux'
 
-// Action
+const CHANGE_TEXT = 'CHANGE_TEXT';
+const BUTTON_CLICK = 'BUTTON_CLICK';
+
+// Action(定义两种事件：“文字来回切换”、“按钮点击”。)
 function changeText() {
 	return {
-		type: 'CHANGE_TEXT'
+		type: CHANGE_TEXT
 	}
 }
 function buttonClick() {
 	return {
-		type: 'BUTTON_CLICK'
+		type: BUTTON_CLICK
 	}
 }
 
