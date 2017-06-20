@@ -3,3 +3,5 @@ node_modules
 npm-debug.log
 hello-world/dist/
 build
+bundle.js
+webpack-lock.json
