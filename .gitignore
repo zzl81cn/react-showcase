@@ -4,4 +4,4 @@ npm-debug.log
 hello-world/dist/
 build
 bundle.js
-webpack-lock.json
+package-lock.json
