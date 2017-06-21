@@ -28,9 +28,12 @@ function buttonClick() {
 }
 
 const initialState = {
-	text: 'Hello'
+	text: 'Hello',
+	age: 99
 }
 
+// 3 Reducer
+// 对于不同的action，对应的状态转换也不一样
 function myApp(state = initialState, action) {
 	switch (action.type) {
 		case 'CHANGE_TEXT':
@@ -50,8 +53,11 @@ function myApp(state = initialState, action) {
 	}
 }
 
+// 4 Store是由Redux直接生成的
 let store = createStore(myApp);
 
+// 5 Components
+// 这里一共有三个组件：文字组件Hello、按钮Change、以及它们的父组件App
 class Hello extends React.Component {
 	constructor(props) {
 		super(props);
@@ -87,6 +93,7 @@ class App extends React.Component {
 		super(props);
 	}
 	render() {
+		// actions和text这两个props在第5步中会解释
 		const {actions, text} = this.props;
 		return (
 			<div>
@@ -117,7 +124,6 @@ function mapDispatchToProps(dispatch) {
 App = connect(mapStateToProps, mapDispatchToProps)(App);
 
 // 6 Render us App
-
 render(
 	<Provider store={store}><App/></Provider>, document.getElementById('root')
 );
