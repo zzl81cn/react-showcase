@@ -1,6 +1,6 @@
 /**
  * Created by zzl81cn on 2017/6/16.
- * https://segmentfault.com/a/1190000004355491
+ * 用React+Redux+ES6写一个最傻瓜的Hello World(https://segmentfault.com/a/1190000004355491)
  */
 
 /**
@@ -15,7 +15,10 @@ import { Provider, connect } from 'react-redux'
 const CHANGE_TEXT = 'CHANGE_TEXT';
 const BUTTON_CLICK = 'BUTTON_CLICK';
 
-// Action(定义两种事件：“文字来回切换”、“按钮点击”。)
+/**
+ * ActionCreator
+ * Action(定义两种事件：“文字来回切换”、“按钮点击”。)
+ * */
 function changeText() {
 	return {
 		type: CHANGE_TEXT
