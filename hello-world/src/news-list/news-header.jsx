@@ -4,7 +4,7 @@
 // import React, {Component} from 'react';
 import React from 'react';
 
-import navLogo from '../../assets/images/logo-visual.jpg';
+import navLogo from '../../assets/images/logo.jpg';
 import '../../assets/styles/news-list.scss';
 
 // export default class NewsHeader extends Component {
