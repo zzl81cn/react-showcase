@@ -71,7 +71,7 @@ class Hello extends React.Component {
 	}
 	render() {
 		return (
-			<h1 onClick={this.handleClick}>{this.props.text}</h1>
+			<h1 onClick={this.handleClick} style={{fontSize: 1.8 + "rem"}}>{this.props.text}</h1>
 		)
 	}
 }
