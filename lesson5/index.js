@@ -7,7 +7,7 @@
  * 0 引入依赖包
  * 我们需要react的本体、react-dom的render方法、redux的createStore和bindActionCreators方法，以及react-redux的Provider和connect方法
  * */
-import React from 'react'
+import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { createStore, bindActionCreators } from 'redux'
 import { Provider, connect } from 'react-redux'
@@ -56,12 +56,18 @@ function myApp(state = initialState, action) {
 	}
 }
 
-// 4 Store是由Redux直接生成的
+/**
+ * 4 Store是由Redux直接生成的
+ * 将上一步编写的Reducer作为参数传给createStore
+ *
+ * 使用 action 来描述“发生了什么”，和使用 reducers 来根据 action 更新 state 的用法。
+ * Store 就是把它们联系到一起的对象。
+ * */
 let store = createStore(myApp);
 
 // 5 Components
 // 这里一共有三个组件：文字组件Hello、按钮Change、以及它们的父组件App
-class Hello extends React.Component {
+class Hello extends Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
@@ -76,7 +82,7 @@ class Hello extends React.Component {
 	}
 }
 
-class Change extends React.Component {
+class Change extends Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
@@ -91,7 +97,7 @@ class Change extends React.Component {
 	}
 }
 
-class App extends React.Component {
+class App extends Component {
 	constructor(props) {
 		super(props);
 	}
