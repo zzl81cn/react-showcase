@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // antd
 import {DatePicker, message} from 'antd';
+// import 'antd/dist/antd.css';
 
 class App extends React.Component {
   constructor(props) {
