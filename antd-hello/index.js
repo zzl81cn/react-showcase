@@ -23,7 +23,7 @@ class App extends React.Component {
           <p>当前日期是：{this.state.date}</p>
         </div>
       </div>
-    )
+    );
   }
 }
 
