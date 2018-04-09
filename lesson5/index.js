@@ -97,6 +97,7 @@ class Change extends Component {
 	}
 }
 
+// App
 class App extends Component {
 	constructor(props) {
 		super(props);
