@@ -16,7 +16,9 @@ ReactDom.render(
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Hello from './components/Hello/Hello';
+import getRouter from './router/router';
 
 ReactDOM.render(
-  <Hello/>, document.getElementById('app')
+  getRouter(), document.getElementById('app')
 );
+// <Hello/>, document.getElementById('app')
