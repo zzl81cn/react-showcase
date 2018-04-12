@@ -1,3 +1,4 @@
+// 引入action的方法
 import {increment, decrement, reset} from './actions/counter';
 import store from './store';
 
