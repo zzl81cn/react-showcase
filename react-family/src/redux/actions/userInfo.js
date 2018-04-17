@@ -19,21 +19,22 @@ function getUserInfoFail() {
   }
 }
 // 我们创建了请求中，请求成功，请求失败三个action创建函数
+
 export function getUserInfo() {
   return function (dispatch) {
-      dispatch(getUserInfoRequest());
+    dispatch(getUserInfoRequest());
 
-      return fetch('http://localhost:8080/api/user.json')
-          .then((response => {
-              return response.json()
-          }))
-          .then((json) => {
-                  dispatch(getUserInfoSuccess(json))
-              }
-          ).catch(
-              () => {
-                  dispatch(getUserInfoFail());
-              }
-          )
+    return fetch('http://localhost:8085/api/user.json')
+      .then((response => {
+        return response.json()
+      }))
+      .then((json) => {
+        dispatch(getUserInfoSuccess(json))
+      }
+      ).catch(
+        () => {
+          dispatch(getUserInfoFail());
+        }
+      )
   }
 }
