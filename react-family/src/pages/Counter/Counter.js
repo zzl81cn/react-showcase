@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// 引入action-creator
 import {increment, decrement, reset} from '../../redux/actions/counter';
 
 // react-redux提供了一个方法connect
