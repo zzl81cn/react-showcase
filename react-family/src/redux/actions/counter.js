@@ -1,9 +1,9 @@
 /* action */
-// action创建函数action creator。通过action创建函数，可以创建action~
 export const INCREMENT = "counter/INCREMENT";
 export const DECREMENT = "counter/DECREMENT";
 export const RESET = "counter/RESET";
 
+// action创建函数action creator。通过action创建函数，可以创建action~
 // 具体什么是 action creator，它们又是如何关联到 action 的呢？
 export function increment() {
   // ...负责构建一个 action （是的，action creator 这个名字已经很明显了）并返回它
