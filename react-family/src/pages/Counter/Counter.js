@@ -16,7 +16,7 @@ class Counter extends Component {
         <button onClick={() => {
           console.log("调用自增函数");
           this.props.increment();
-        }}>自增</button>
+        }}>自增偶数倍</button>
         <button onClick={() => {
           console.log("调用自减函数");
           this.props.decrement();
