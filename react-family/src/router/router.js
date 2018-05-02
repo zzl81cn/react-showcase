@@ -6,6 +6,7 @@ import Home from '../pages/Home/Home';
 import Page1 from '../pages/Page1/Page1';
 import Counter from '../pages/Counter/Counter';
 import UserInfo from '../pages/UserInfo/UserInfo';
+// import Topics from '../pages/Topics/Topics';
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>
@@ -26,6 +27,7 @@ const Topic = ({ match }) => (
     <h3>{match.params.topicId}</h3>
   </div>
 );
+
 /* 
   route 的三种写法
     <Route component>
@@ -65,6 +67,7 @@ const getRouter = () => (
         <Route path="/counter" component={Counter}/>
         <Route path="/userinfo" component={UserInfo}/>
         <Route path="/topics" component={Topics} />
+        {/* <Route path="/topics" render={(match) => <Topics {...match} />}/> */}
       </Switch>
     </div>
   </Router>
