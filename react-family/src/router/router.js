@@ -1,4 +1,5 @@
 import React from 'react';
+// react router basic example: https://reacttraining.com/react-router/web/example/basic
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 import Home from '../pages/Home/Home';
