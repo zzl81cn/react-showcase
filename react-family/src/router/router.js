@@ -67,7 +67,7 @@ const getRouter = () => (
         <Route path="/counter" component={Counter}/>
         <Route path="/userinfo" component={UserInfo}/>
         <Route path="/topics" component={Topics} />
-        {/* <Route path="/topics" render={(match) => <Topics {...match} />}/> */}
+        {/* <Route path="/topics" children={(match) => <Topics {...match} />}/> */}
       </Switch>
     </div>
   </Router>

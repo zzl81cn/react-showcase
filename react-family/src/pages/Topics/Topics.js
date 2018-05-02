@@ -13,7 +13,7 @@ export default class Topics extends Componet {
     </div>
   ); */
   render() {
-    const {match} = this.props;
+    const {match} = this.props.match;
     return (
       <div>
         <h2>Topics</h2>
