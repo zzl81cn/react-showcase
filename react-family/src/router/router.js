@@ -33,17 +33,17 @@ const Topic = ({ match }) => (
     <Route children>
   route 传给组件的参数
     match 跟爸爸有关
-    isExact 是否完全匹配
-    params 参数，一般指path中的参数
-    path <route>中 path 属性的值，与浏览器地址栏 url 进行匹配，“/topics/:topicId”
-    url Link 或者 a 标签 中跳转的地址，一般情况下为浏览器地址栏中地址，如果有 basename，浏览器地址栏为 basename + url 的值，“/topics/components”
+      isExact 是否完全匹配
+      params 参数，一般指path中的参数
+      path <route>中 path 属性的值，与浏览器地址栏 url 进行匹配，“/topics/:topicId”
+      url Link 或者 a 标签 中跳转的地址，一般情况下为浏览器地址栏中地址，如果有 basename，浏览器地址栏为 basename + url 的值，“/topics/components”
     location 跟自己有关
-    pathname 与 match 中的 url 属性相同，“/topics/components”
-    hash: "" 不知所云，换成 hashHistory 也没有值
-    key: "" 随机生成一个6位的字符串，唯一喔
-    search: "" 参数
+      pathname 与 match 中的 url 属性相同，“/topics/components”
+      hash: "" 不知所云，换成 hashHistory 也没有值
+      key: "" 随机生成一个6位的字符串，唯一喔
+      search: "" 参数
     history
-    -history对象，可以通过代码控制前进、后退
+      -history对象，可以通过代码控制前进、后退
   <route> 属性
     path 匹配的路径 “/topics/:topicId”
     exact 完全匹配
