@@ -98,8 +98,8 @@ function getData(url) {
 // Call
 getData('https://hacker-news.firebaseio.com/v0/topstories.json')
 	.then(function (stories) {
-		// console.log('Data is: ', stories.slice(0, 2));
-		// [13729979,13729517]
+		// console.log('Data is: ', stories.slice(0, 10));
+		// [13729979, 13729517, 17172287, 17172287, 17175941, 17173051, 17175366, 17172092, 17176895, 17171614]
 
 		return Promise.all(
 			stories.slice(0, 10).map(itemId => getData('https://hacker-news.firebaseio.com/v0/item/' + itemId + '.json'))
