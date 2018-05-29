@@ -28,6 +28,10 @@ const Topic = ({ match }) => (
   </div>
 );
 
+/**
+ * React Router页面传值的三种方法
+ * https://blog.csdn.net/qq_23158083/article/details/68488831
+ *  */
 /* 
   route 的三种写法
     <Route component>
