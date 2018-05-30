@@ -92,7 +92,11 @@ Hello.defaultProps = defaultProps;*/
 
 // Define
 function getData(url) {
-	// Use ES6 Generator's genesis Promise
+	/**
+	 * Use ES6 Generator's genesis Promise
+	 * 将 jQuery 生成的deferred对象，转为一个新的 Promise 对象
+	 * 等价于 new Promise(resolve => resolve($.ajax(url)))
+	 *  */
 	return Promise.resolve($.ajax(url));
 }
 // Call
