@@ -47,7 +47,8 @@ module.exports = {
 				exclude: /node_modules/,
 				// css-loader 处理 css 文件中的 url() 表达式.
 				// style-loader 将 css 代码插入页面中的 style 标签中.
-				loader: ['style-loader', 'css-loader', 'autoprefixer-loader?browsers=last 2 versions', 'sass-loader']
+				// loader: ['style-loader', 'css-loader', 'autoprefixer-loader?browsers=last 2 versions', 'sass-loader']
+				loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 			},
 			{
 				test: /\.js$/,
