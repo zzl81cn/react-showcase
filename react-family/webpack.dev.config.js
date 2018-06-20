@@ -24,7 +24,8 @@ module.exports = {
     port: 8085,
     contentBase: path.join(__dirname, './dist'),
     historyApiFallback: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    open: false
   },
   resolve: {
     alias: {
