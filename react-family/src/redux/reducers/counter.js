@@ -1,6 +1,6 @@
 /* counter */
 // reducer是一个纯函数，接收action和旧的state,生成新的state.
-import {INCREMENT, DECREMENT, RESET} from '../actions/counter';
+import {INCREMENT, DECREMENT, RESET} from 'reduxPath/actions/counter';
 
 /**
  * http://cn.redux.js.org/

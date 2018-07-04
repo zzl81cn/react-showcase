@@ -31,7 +31,8 @@ module.exports = {
     alias: {
         pages: path.join(__dirname, 'src/pages'),
         component: path.join(__dirname, 'src/component'),
-        router: path.join(__dirname, 'src/router')
+        router: path.join(__dirname, 'src/router'),
+        reduxPath: path.join(__dirname, 'src/redux')
     }
   }
 };

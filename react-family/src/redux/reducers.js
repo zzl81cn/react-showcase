@@ -1,7 +1,7 @@
 // reducer是一个纯函数，接收action和旧的state,生成新的state.
 // 一个项目有很多的reducers,我们要把他们整合到一起
-import counter from './reducers/counter';
-import userInfo from './reducers/userInfo';
+import counter from 'reduxPath/reducers/counter';
+import userInfo from 'reduxPath/reducers/userInfo';
 
 export default function combineReducers(state = {}, action) {
   return {
