@@ -2,11 +2,11 @@ import React from 'react';
 // react router basic example: https://reacttraining.com/react-router/web/example/basic
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
-import Home from '../pages/Home/Home';
-import Page1 from '../pages/Page1/Page1';
-import Counter from '../pages/Counter/Counter';
-import UserInfo from '../pages/UserInfo/UserInfo';
-// import Topics from '../pages/Topics/Topics';
+import Home from 'pages/Home/Home';
+import Page1 from 'pages/Page1/Page1';
+import Counter from 'pages/Counter/Counter';
+import UserInfo from 'pages/UserInfo/UserInfo';
+// import Topics from 'pages/Topics/Topics';
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>

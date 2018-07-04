@@ -1,5 +1,5 @@
 // document.getElementById('app').innerHTML = 'Welcome to webpack!';
-// use es6
+// use es6 arrow function
 /* var func = str => {
   document.getElementById('app').innerHTML = str;
 }
@@ -20,7 +20,7 @@ import {Provider} from 'react-redux';
 import store from './redux/store'
 
 import Hello from './components/Hello/Hello';
-import getRouter from './router/router';
+import getRouter from 'router/router';
 
 // init
 renderWithHotReload(getRouter());
