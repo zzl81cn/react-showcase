@@ -15,8 +15,8 @@ ReactDom.render(
 // use module
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
-import {Provider} from 'react-redux';
+import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
 import store from 'reduxPath/store'
 
 import Hello from './components/Hello/Hello';
