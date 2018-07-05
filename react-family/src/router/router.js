@@ -7,6 +7,7 @@ import Page1 from 'pages/Page1/Page1';
 import Counter from 'pages/Counter/Counter';
 import UserInfo from 'pages/UserInfo/UserInfo';
 // import Topics from 'pages/Topics/Topics';
+
 const Topics = ({ match }) => (
   <div>
     <h2>Topics</h2>

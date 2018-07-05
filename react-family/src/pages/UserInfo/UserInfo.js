@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUserInfo } from "../../redux/actions/userInfo";
+import { getUserInfo } from "reduxPath/actions/userInfo";
 
 class UserInfo extends Component {
 
@@ -11,7 +11,7 @@ class UserInfo extends Component {
         {
           isLoading ? '请求信息中......' :
             (
-              errorMsg ? errorMsg :
+              // errorMsg ? errorMsg :
                 <div>
                   <p>用户信息：</p>
                   <p>用户名：{userInfo.name}</p>
@@ -24,5 +24,20 @@ class UserInfo extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    userInfo: state.userInfo
+  }
+}
 
-export default connect((state) => ({ userInfo: state.userInfo }), { getUserInfo })(UserInfo);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUserInfo: () => {
+      dispatch(getUserInfo())
+    }
+  }
+}
+
+
+// export default connect((state) => ({userInfo: state.userInfo}), {getUserInfo})(UserInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);

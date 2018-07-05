@@ -27,8 +27,8 @@ renderWithHotReload(getRouter());
 
 // HMR
 if(module.hot) {
-  module.hot.accept('./router/router', () => {
-    const getRouter = require('./router/router').default;
+  module.hot.accept('router/router', () => {
+    const getRouter = require('router/router').default;
     renderWithHotReload(getRouter());
   });
 }

@@ -1,7 +1,9 @@
+// action
 export const GET_USER_INFO_REQUEST = "userInfo/GET_USER_INFO_REQUEST";
 export const GET_USER_INFO_SUCCESS = "userInfo/GET_USER_INFO_SUCCESS";
 export const GET_USER_INFO_FAIL = "userInfo/GET_USER_INFO_FAIL";
 
+// 我们创建了请求中，请求成功，请求失败三个action creator
 function getUserInfoRequest() {
   return {
     type: GET_USER_INFO_REQUEST
@@ -18,7 +20,7 @@ function getUserInfoFail() {
     type: GET_USER_INFO_FAIL
   }
 }
-// 我们创建了请求中，请求成功，请求失败三个action创建函数
+
 
 export function getUserInfo() {
   return function (dispatch) {
@@ -26,9 +28,11 @@ export function getUserInfo() {
 
     return fetch('http://localhost:8085/api/user.json')
       .then((response => {
-        return response.json()
+        console.log('called api');
+        return response.json();
       }))
       .then((json) => {
+        console.log('json data');
         dispatch(getUserInfoSuccess(json))
       }
       ).catch(
