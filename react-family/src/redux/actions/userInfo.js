@@ -32,11 +32,12 @@ export function getUserInfo() {
         return response.json();
       }))
       .then((json) => {
-        console.log('json data');
+        console.log('json data', json);
         dispatch(getUserInfoSuccess(json))
-      }
-      ).catch(
+      })
+      .catch(
         () => {
+          console.log('catch error');
           dispatch(getUserInfoFail());
         }
       )
