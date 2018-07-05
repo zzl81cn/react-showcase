@@ -20,6 +20,7 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }]
   },
+  devtool: 'inline-source-map',
   devServer: {
     port: 8086,
     contentBase: path.join(__dirname, './dist'),

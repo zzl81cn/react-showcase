@@ -9,7 +9,7 @@ function getUserInfoRequest() {
     type: GET_USER_INFO_REQUEST
   }
 }
-function getUserInfoSuccess() {
+function getUserInfoSuccess(userInfo) {
   return {
     type: GET_USER_INFO_SUCCESS,
     userInfo: userInfo
@@ -23,17 +23,17 @@ function getUserInfoFail() {
 
 
 export function getUserInfo() {
-  return function (dispatch) {
+  return (dispatch) => {
     dispatch(getUserInfoRequest());
 
-    return fetch('/api/user.json')
+    fetch('/api/user.json')
       .then((response => {
         console.log('called api');
         return response.json();
       }))
-      .then((json) => {
-        console.log('json data', json);
-        dispatch(getUserInfoSuccess(json))
+      .then((responseData) => {
+        console.log('responseData data', responseData);
+        dispatch(getUserInfoSuccess(responseData))
       })
       .catch(
         () => {
