@@ -16,3 +16,6 @@ store.dispatch(reset());
 
 // stop listener
 unsubscribe();
+
+// webpack testRedux.js build.js
+// node build.js

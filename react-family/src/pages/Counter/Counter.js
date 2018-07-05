@@ -16,11 +16,13 @@ class Counter extends Component {
         <button onClick={() => {
           console.log("调用自增函数");
           this.props.increment();
-        }}>自增偶数倍</button>
+        }}>自增</button>
+        
         <button onClick={() => {
           console.log("调用自减函数");
           this.props.decrement();
         }}>自减</button>
+
         <button onClick={() => {
           console.log("调用reset函数");
           this.props.reset();
@@ -50,7 +52,10 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 /**
- * connect接收两个参数，一个mapStateToProps,就是把redux的state，转为组件的Props，还有一个参数是mapDispatchToprops,就是把发射actions的方法，转为Props属性函数。
+ * connect接收两个参数：
+ * - 一个mapStateToProps,就是把redux的state，转为组件的Props；
+ * - 还有一个参数是mapDispatchToprops,就是把发射actions的方法，转为Props属性函数。
+ * 
  * 1.Provider组件是让所有的组件可以访问到store。不用手动去传。也不用手动去监听。
  * 2.connect函数作用是从 Redux state 树中读取部分数据，并通过 props 来把这些数据提供给要渲染的组件。也传递dispatch(action)函数到props。
   */

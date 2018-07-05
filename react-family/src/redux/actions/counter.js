@@ -9,7 +9,7 @@ export const DECREMENT = "counter/DECREMENT";
 export const RESET = "counter/RESET";
 
 
-// action创建函数action creator。通过action创建函数，可以创建action~
+// action creator -- action创建函数。通过action创建函数，可以创建action~
 // 具体什么是 action creator，它们又是如何关联到 action 的呢？
 /* 下面这些在view(视图)的dispatch调用 */
 export function increment() {
