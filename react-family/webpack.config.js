@@ -53,12 +53,12 @@ module.exports = {
     }),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: 'vendor'
+      // ,name: 'runtime'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime'
     }),
-    /* new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
-    }), */
     new webpack.DefinePlugin({
       'process.env': {'NODE_ENV': JSON.stringify('production')}
     }),
