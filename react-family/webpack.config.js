@@ -2,6 +2,9 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -14,7 +17,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js'
+    chunkFilename: '[name].[chunkhash].js',
+    publicPath : '/'
   },
   module: {
     rules: [{
@@ -23,7 +27,10 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader'
+      })
     }, {
       test: /\.(jpg|png|gif)/,
       use: [{
@@ -35,13 +42,27 @@ module.exports = {
     }]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, 'src/index.html')
     }),
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash:5].css',
+      allChunks: true
+    }),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
-    })
+      name: 'vendor',
+      name: 'runtime'
+    }),
+    /* new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }), */
+    new webpack.DefinePlugin({
+      'process.env': {'NODE_ENV': JSON.stringify('production')}
+    }),
+    new UglifyJsPlugin()
   ],
   resolve: {
     alias: {
