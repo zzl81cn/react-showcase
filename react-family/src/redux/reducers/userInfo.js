@@ -1,5 +1,6 @@
 // 再强调下，reducer是根据state和action生成新state的纯函数。
 import {GET_USER_INFO_REQUEST, GET_USER_INFO_SUCCESS, GET_USER_INFO_FAIL} from 'reduxPath/actions/userInfo';
+
 const initState = {
   isLoading: false,
   userInfo: {},

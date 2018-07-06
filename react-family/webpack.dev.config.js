@@ -11,14 +11,30 @@ module.exports = {
   // output
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    chunkFilename: '[name].js'
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: ['babel-loader?cacheDirectory=true'],
-      include: path.join(__dirname, 'src')
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: ['babel-loader?cacheDirectory=true'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192
+          }
+        }]
+      }
+    ]
   },
   devtool: 'inline-source-map',
   devServer: {

@@ -12,7 +12,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <div>当前计数为{this.props.counter.count}</div>
+        <div>当前计数为: {this.props.counter.count}</div>
         <button onClick={() => {
           console.log("调用自增函数");
           this.props.increment();

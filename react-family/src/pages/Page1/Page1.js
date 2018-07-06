@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
 
+import './page1.css';
+import image from './images/gdpr_icons_process.png';
+
 export default class Page1 extends Component {
   render () {
     return (
-      <div>This is Page1.</div>
+      <div className="page-box">
+      This is Page1.
+
+      <img src={image} alt="xxx"/>
+      </div>
     )
   }
 }
