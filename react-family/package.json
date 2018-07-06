@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-build": "webpack --config webpack.dev.config.js",
+    "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --config webpack.dev.config.js --color --progress --hot"
   },
   "author": "zzl81cn",
@@ -19,6 +19,7 @@
     "bundle-loader": "^0.5.6",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
     "react-hot-loader": "^4.0.0",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",

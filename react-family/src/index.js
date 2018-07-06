@@ -47,7 +47,7 @@ function renderWithHotReload(RootElement) {
     <AppContainer>
       <Provider store={store}>{RootElement}</Provider>
     </AppContainer>,
-    document.getElementById('app')
+    document.getElementById('App')
   )
 }
 // <Hello/>, document.getElementById('app')

@@ -26,7 +26,7 @@ export function getUserInfo() {
   return (dispatch) => {
     dispatch(getUserInfoRequest());
 
-    fetch('/api/user.json')
+    fetch('https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/userInfo')
       .then((response => {
         console.log('called api');
         return response.json();
