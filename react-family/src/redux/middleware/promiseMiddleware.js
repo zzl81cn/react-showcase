@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 export default store => next => action => {
-  const {dispatch, getState} = store;
+  const {
+    dispatch,
+    getState
+  } = store;
   /*如果dispatch来的是一个function，此处不做处理，直接进入下一级*/
-  if(typeof action === 'function') {
+  if (typeof action === 'function') {
     action(dispatch, getState);
     return;
   }
@@ -15,7 +18,7 @@ export default store => next => action => {
     ...rest
   } = action;
   /*没有promise，证明不是想要发送ajax请求的，就直接进入下一步啦！*/
-  if(!action.promise) {
+  if (!action.promise) {
     return next(action);
   }
   /* 解析types */
@@ -34,9 +37,9 @@ export default store => next => action => {
     next({
       ...rest,
       result,
-      type: SUCCESS,
+      type: SUCCESS
     });
-    if(afterSuccess) {
+    if (afterSuccess) {
       afterSuccess(dispatch, getState, result);
     }
   };
