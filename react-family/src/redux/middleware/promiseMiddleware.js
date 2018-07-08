@@ -22,11 +22,11 @@ export default store => next => action => {
     return next(action);
   }
   /* 解析types */
-  const {
+  const [
     REQUEST,
     SUCCESS,
     FAILURE
-  } = types;
+  ] = types;
   /* 开始请求的时候，发一个action */
   next({
     ...rest,
