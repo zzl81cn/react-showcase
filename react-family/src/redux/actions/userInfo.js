@@ -21,12 +21,13 @@ function getUserInfoFail() {
   }
 }
 
+const userinfoURL = 'https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/userInfo';
 
-export function getUserInfo() {
+/* export function getUserInfo() {
   return (dispatch) => {
     dispatch(getUserInfoRequest());
 
-    fetch('https://easy-mock.com/mock/5a0d2eb685e6ba3feeead78c/example/userInfo')
+    fetch(userinfoURL)
       .then((response => {
         console.log('called api');
         return response.json();
@@ -41,5 +42,11 @@ export function getUserInfo() {
           dispatch(getUserInfoFail());
         }
       )
+  }
+} */
+export function getUserInfo() {
+  return {
+    types: [GET_USER_INFO_REQUEST, GET_USER_INFO_SUCCESS, GET_USER_INFO_FAIL],
+    promise: client => client.get(userinfoURL)
   }
 }

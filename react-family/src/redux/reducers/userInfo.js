@@ -18,11 +18,19 @@ export default function reducer(state = initState, action) {
         userInfo: {},
         errorMsg: ''
       }
-    case GET_USER_INFO_SUCCESS:
+    /* case GET_USER_INFO_SUCCESS:
       return {
         ...state,
         isLoading: false,
         userInfo: action.userInfo,
+        errorMsg: ''
+      }; */
+    case GET_USER_INFO_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        // userInfo: action.userInfo,
+        userInfo: action.result.data,
         errorMsg: ''
       };
     case GET_USER_INFO_FAIL:

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUserInfo } from "reduxPath/actions/userInfo";
+import { getUserInfoAxios } from "reduxPath/actions/userInfo";
 
 class UserInfo extends Component {
 
