@@ -34,6 +34,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getUserInfo: () => {
+      /* axios-2:然后在dispatch(getUserInfo())后，通过redux中间件来处理请求逻辑。 */
       dispatch(getUserInfo())
     }
   }

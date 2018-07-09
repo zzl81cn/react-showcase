@@ -21,6 +21,7 @@ export default store => next => action => {
   if (!action.promise) {
     return next(action);
   }
+  console.log('types is: ', types)
   /* 解析types */
   const [
     REQUEST,
@@ -32,6 +33,7 @@ export default store => next => action => {
     ...rest,
     type: REQUEST,
   })
+
   /*定义请求成功时的方法*/
   const onFulfilled = result => {
     next({
@@ -43,6 +45,7 @@ export default store => next => action => {
       afterSuccess(dispatch, getState, result);
     }
   };
+  // 处理失败
   const OnRejected = error => {
     next({
       ...rest,
