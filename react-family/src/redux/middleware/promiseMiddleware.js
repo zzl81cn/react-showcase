@@ -22,7 +22,7 @@ export default store => next => action => {
     return next(action);
   }
   console.log('types is: ', types)
-  /* 解析types */
+  /* 解析types，此处为userInfo的三个类型 */
   const [
     REQUEST,
     SUCCESS,
