@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
     userInfo: state.userInfo
   }
 }
-
+// 将store的getUserInfo转为容器的props方法
 const mapDispatchToProps = (dispatch) => {
   return {
     getUserInfo: () => {

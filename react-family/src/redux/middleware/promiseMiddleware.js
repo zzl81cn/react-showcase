@@ -28,7 +28,7 @@ export default store => next => action => {
     SUCCESS,
     FAILURE
   ] = types;
-  /* 开始请求的时候，发一个action */
+  /* 开始请求的时候，发一个action，触发一个代表异步开始的 action */
   next({
     ...rest,
     type: REQUEST,

@@ -44,7 +44,7 @@ export function getUserInfoFetch() {
       )
   }
 }
-// axios-1:action创建函数是这样的。比我们现在写的fetch简单多了。
+// axios-1: action creator创建函数是这样的。比我们现在写的fetch简单多了。
 export function getUserInfo() {
   return {
     types: [GET_USER_INFO_REQUEST, GET_USER_INFO_SUCCESS, GET_USER_INFO_FAIL],
