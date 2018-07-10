@@ -25,6 +25,7 @@ class UserInfo extends Component {
     )
   }
 }
+// 将store的state 转为容器的props
 const mapStateToProps = (state) => {
   return {
     userInfo: state.userInfo
