@@ -29,7 +29,13 @@ module.exports = {
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: 'css-loader'
+        use: ['css-loader']
+      })
+    }, {
+      test: /\.less$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'less-loader']
       })
     }, {
       test: /\.(jpg|png|gif)/,
@@ -51,6 +57,7 @@ module.exports = {
       filename: '[name].[contenthash:5].css',
       allChunks: true
     }),
+    // new ExtractTextPlugin('style.css'),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'

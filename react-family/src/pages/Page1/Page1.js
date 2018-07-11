@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
-import './page1.css';
+import './Page1.css';
+// import './Page1.less';
 import image from './images/gdpr_icons_process.png';
 
 export default class Page1 extends Component {
