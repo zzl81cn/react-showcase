@@ -24,12 +24,13 @@ module.exports = {
         test: /\.js$/,
         use: ['babel-loader?cacheDirectory=true'],
         include: path.join(__dirname, 'src')
-      },
-      {
+      }, {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
+      }, {
+        test: /\.less$/,
+        use: ['style-loader','css-loader', 'less-loader']
+      }, {
         test: /\.(jpg|png|gif)$/,
         use: [{
           loader: 'url-loader',
