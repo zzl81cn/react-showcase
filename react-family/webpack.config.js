@@ -72,6 +72,7 @@ module.exports = {
     new UglifyJsPlugin()
   ],
   resolve: {
+    // 别名
     alias: {
       pages: path.join(__dirname, 'src/pages'),
       component: path.join(__dirname, 'src/component'),
