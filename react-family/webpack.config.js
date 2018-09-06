@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); // 它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -16,8 +16,9 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[chunkhash].js', // find how to use
     chunkFilename: '[name].[chunkhash].js',
+    // 打包的时候，让静态文件的链接定位到静态服务器
     publicPath : '/'
   },
   module: {
@@ -58,6 +59,7 @@ module.exports = {
       allChunks: true
     }),
     // new ExtractTextPlugin('style.css'),
+    // 引入顺序在这里很重要。CommonsChunkPlugin 的 'vendor' 实例，必须在 'runtime' 实例之前引入。
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
@@ -72,7 +74,7 @@ module.exports = {
     new UglifyJsPlugin()
   ],
   resolve: {
-    // 别名
+    // 别名，可以简化文件引入时的路径
     alias: {
       pages: path.join(__dirname, 'src/pages'),
       component: path.join(__dirname, 'src/component'),
