@@ -1,0 +1,16 @@
+{
+  "name": "react-family-first",
+  "version": "1.0.0",
+  "description": "react-family-first",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.dev.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zzl81cn",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
