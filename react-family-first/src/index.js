@@ -1,1 +1,0 @@
-document.getElementById('App').innerHTML='<p>Hei, welcome.</p>';
