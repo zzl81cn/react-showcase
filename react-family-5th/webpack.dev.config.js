@@ -7,7 +7,8 @@ const webpackConfig = {
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.join(__dirname, './dist')
+        contentBase: path.join(__dirname, './dist'),
+        historyApiFallback: true
     },
     module: {
         rules: [
