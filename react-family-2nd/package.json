@@ -1,0 +1,25 @@
+{
+  "name": "react-family-2nd",
+  "version": "1.0.0",
+  "description": "> 由于没有全局安装webpack，需要执行npm start 在当前项目文件夹运行\r ``` bash\r webpack --config webpack.dev.config.js 或者写在package.json的scripts里\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.dev.config.js"
+  },
+  "author": "zzl81cn",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
