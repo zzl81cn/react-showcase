@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+/* react-redux 的其中两个方法connect,Provider.
+    connect将redux的state和方法转换为组件能用的(一个mapStateToProps,就是把redux的state，转为组件的Props)
+    Provider在index里面使用，那个组件去接收store，然后包裹router等
+ */
 import { connect } from 'react-redux';
 // 引入action-creator
 import {increment, decrement, reset} from '../../redux/actions/counter';
@@ -62,5 +66,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter)
        ^
        | redux.state -> Component Props + dispatch Component actions method to Props func.
     connect
-
 */

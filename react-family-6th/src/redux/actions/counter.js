@@ -5,6 +5,7 @@ export const INCREMENT = "counter/INCREMENT";
 export const DECREMENT = "counter/DECREMENT";
 export const RESET = "counter/RESET";
 
+/* action creator */
 export function increment() {
     return {type: INCREMENT}
 }

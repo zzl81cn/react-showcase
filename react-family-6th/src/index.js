@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
-/* 引入react-redux的Provider方法，将store作为参数传入 */
+/* 引入react-redux的Provider方法，将store作为参数传入，另一个connect在page里面使用 */
 import {Provider} from 'react-redux';
 import store from "./redux/store";
 
