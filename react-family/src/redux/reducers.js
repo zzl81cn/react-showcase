@@ -1,3 +1,4 @@
+/* reducers or combineReducer 后面交给store */
 import { combineReducers } from "redux";
 // reducer是一个纯函数，接收action和旧的state,生成新的state.
 // 一个项目有很多的reducers,我们要把他们整合到一起
