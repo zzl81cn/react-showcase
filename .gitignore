@@ -4,3 +4,5 @@ npm-debug.log
 build
 package-lock.json
 #/dist/
+
+hello-world/dist/
