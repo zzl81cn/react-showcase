@@ -5,7 +5,7 @@ import React, {Component} from 'react';
     Provider在index里面使用，那个组件去接收store，然后包裹router等
  */
 import { connect } from 'react-redux';
-// 引入action-creator
+// 引入action-creator，看下面的 mapDispatchToProps(dispatch)
 import {increment, decrement, reset} from '../../redux/actions/counter';
 
 class Counter extends Component {
@@ -32,12 +32,14 @@ class Counter extends Component {
   }
 }
 
+/* mapStateToProps, mapDispatchToProp是react-redux的connect所需 */
 const mapStateToProps = (state) => {
   return {
     counter: state.counter
   }
 }
 
+/* 此处使用的是actionCreator的xx，都是在视图组件使用“this.props.xx” */
 const mapDispatchToProps = (dispatch) => {
   return {
     increment: () => {
@@ -64,6 +66,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter)
 /* 
     Counter
        ^
-       | redux.state -> Component Props + dispatch Component actions method to Props func.
+       | redux.state -> Component Props
+       | dispatch(action) Component actions method to Props func.
     connect
 */
