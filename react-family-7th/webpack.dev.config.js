@@ -18,6 +18,7 @@ const webpackConfig = {
             actions: path.join(__dirname, 'src/redux/actions')
         }
     },
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
